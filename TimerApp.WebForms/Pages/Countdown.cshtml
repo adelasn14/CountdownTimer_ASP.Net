@@ -1,0 +1,85 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Countdown Timer";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div class="countdown-container">
+    <p class="countdown-text">It's</p>
+    <p id="countdownNewYear" class="countdown"></p>
+    <p class="countdown-text">until New Year</p>
+</div>
+
+<script>var countDownDateNewYear = new Date("Jan 1, 2024 00:00:00").getTime();
+
+    var x = setInterval(function () {
+        var now = new Date().getTime();
+        var distance = countDownDateNewYear - now;
+
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("countdownNewYear").innerHTML = days + "d " + hours + "h "
+            + minutes + "m " + seconds + "s ";
+
+        if (distance < 0) {
+            clearInterval(x);
+            document.getElementById("countdownNewYear").innerHTML = "EXPIRED";
+        }
+    }, 1000);</script>
+
+<div class="countdown-container">
+    <p class="countdown-text">It's</p>
+    <p id="countdownBirthday" class="countdown"></p>
+    <p class="countdown-text">until Adel's birthday</p>
+</div>
+
+<script>var countDownDateBirthday = new Date("Apr 14, 2024 00:00:00").getTime();
+
+    var x = setInterval(function () {
+        var now = new Date().getTime();
+        var distance = countDownDateBirthday - now;
+
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("countdownBirthday").innerHTML = days + "d " + hours + "h "
+            + minutes + "m " + seconds + "s ";
+
+        if (distance < 0) {
+            clearInterval(x);
+            document.getElementById("countdownBirthday").innerHTML = "EXPIRED";
+        }
+    }, 1000);</script>
+
+<div class="countdown-container">
+    <p class="countdown-text">It's</p>
+    <p id="countdownRamadhan" class="countdown"></p>
+    <p class="countdown-text">until Ramadhan</p>
+</div>
+
+<script>var countDownDateRamadhan = new Date("Mar 10, 2024 00:00:00").getTime();
+
+    var x = setInterval(function () {
+        var now = new Date().getTime();
+        var distance = countDownDateRamadhan - now;
+
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("countdownRamadhan").innerHTML = days + "d " + hours + "h "
+            + minutes + "m " + seconds + "s ";
+
+        if (distance < 0) {
+            clearInterval(x);
+            document.getElementById("countdownRamadhan").innerHTML = "EXPIRED";
+        }
+    }, 1000);</script>
