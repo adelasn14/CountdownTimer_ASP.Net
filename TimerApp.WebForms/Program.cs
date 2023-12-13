@@ -1,4 +1,16 @@
-﻿var builder = WebApplication.CreateBuilder(args);
+﻿using Microsoft.EntityFrameworkCore;
+using TimerApp.WebForms.Data;
+
+var builder = WebApplication.CreateBuilder(args);
+
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
+
+// Configure DbContext with SQLite
+builder.Services.AddDbContext<TimerAppDbContext>(options =>
+    options.UseSqlite(connectionString));
+
+// Add controllers and views
+builder.Services.AddControllersWithViews();
 
 // Add services to the container.
 builder.Services.AddRazorPages();

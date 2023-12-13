@@ -4,12 +4,26 @@
     ViewData["Title"] = "Countdown Timer";
 }
 
-<h1>@ViewData["Title"]</h1>
-
-<div class="countdown-container">
-    <p class="countdown-text">It's</p>
-    <p id="countdownNewYear" class="countdown"></p>
-    <p class="countdown-text">until New Year</p>
+<h1 class="title">@ViewData["Title"]</h1>
+<br />
+<div class="container text-center">
+    <div class="row align-items-center">
+        <div class="col">
+            <p class="countdown-text">It's</p>
+            <p id="countdownNewYear" class="countdown"></p>
+            <p class="countdown-text">until New Year</p>
+        </div>
+        <div class="col">
+            <p class="countdown-text">It's</p>
+            <p id="countdownBirthday" class="countdown"></p>
+            <p class="countdown-text">until Adel's birthday</p>
+        </div>
+        <div class="col">
+            <p class="countdown-text">It's</p>
+            <p id="countdownRamadhan" class="countdown"></p>
+            <p class="countdown-text">until Ramadhan</p>
+        </div>
+    </div>
 </div>
 
 <script>var countDownDateNewYear = new Date("Jan 1, 2024 00:00:00").getTime();
@@ -32,12 +46,6 @@
         }
     }, 1000);</script>
 
-<div class="countdown-container">
-    <p class="countdown-text">It's</p>
-    <p id="countdownBirthday" class="countdown"></p>
-    <p class="countdown-text">until Adel's birthday</p>
-</div>
-
 <script>var countDownDateBirthday = new Date("Apr 14, 2024 00:00:00").getTime();
 
     var x = setInterval(function () {
@@ -57,12 +65,6 @@
             document.getElementById("countdownBirthday").innerHTML = "EXPIRED";
         }
     }, 1000);</script>
-
-<div class="countdown-container">
-    <p class="countdown-text">It's</p>
-    <p id="countdownRamadhan" class="countdown"></p>
-    <p class="countdown-text">until Ramadhan</p>
-</div>
 
 <script>var countDownDateRamadhan = new Date("Mar 10, 2024 00:00:00").getTime();
 

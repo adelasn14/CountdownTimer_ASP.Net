@@ -1,0 +1,74 @@
+@page
+@model TimerApp.WebForms.Pages.Timer.IndexModel
+
+@{
+    ViewData["Title"] = "Countdown Timer";
+}
+
+<head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+
+<h1 class="title">@ViewData["Title"]</h1>
+<br />
+
+<p class="title">
+    <a asp-page="Create">
+        <div class="iconAdd">
+            <div class="giveBorder">
+                <i class="material-icons">add</i>
+                Create New
+            </div>
+        </div>        
+    </a>
+</p>
+
+@foreach (var item in Model.TimerItem)
+{
+    // check if the 1st char of ID is number, then add _ as the 1st char. Replace every hyphen (-) to _ to match javascript variable requirement.
+    // add replacing hyphen as default id
+    var modifiedId = char.IsDigit(item.Id.ToString()[0]) ? "_" + item.Id.ToString().Replace("-", "_") : item.Id.ToString().Replace("-", "_");
+
+    <div class="countdownContainer text-center">
+        <div class="row">
+            <div class="col">
+                <div class="text-center">
+                    <p class="countdown-text">It's</p>
+                    <p id="@modifiedId" class="countdown"></p>
+                    <p class="countdown-text">until @Html.DisplayFor(modelItem => item.TimerName)</p>
+
+                    <div>
+                        <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                        <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                        <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+            var formattedDate = "@item.Date.ToString("MMM d, yyyy HH:mm:ss")";
+
+            var @modifiedId = new Date(formattedDate).getTime();
+
+            var x = setInterval(function () {
+                var now = new Date().getTime();
+                var distance = @modifiedId - now;
+
+                    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                document.getElementById("@modifiedId").innerHTML = days + "d " + hours + "h "
+                        + minutes + "m " + seconds + "s ";
+
+                    if (distance < 0) {
+                        clearInterval(x);
+                        document.getElementById("@modifiedId").innerHTML = "EXPIRED";
+                    }
+            }, 1000);
+    </script>
+}

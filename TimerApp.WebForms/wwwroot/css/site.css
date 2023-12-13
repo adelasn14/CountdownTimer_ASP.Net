@@ -21,18 +21,38 @@ body {
   margin-bottom: 60px;
 }
 
-.countdown-container {
-    text-align: center;
-    margin-top: 50px; /* Adjust the margin as needed */
+.countdownContainer {
+    border: 10px dashed #A2C4C9;
+    margin: 10px;
+    padding: 10px;
+    display: inline-block;
+    width: 400px;
 }
 
 .countdown-text {
-    font-size: 24px; /* Adjust the font size as needed */
+    font-size: 24px;
     margin: 10px 0;
 }
 
 .countdown {
-    font-size: 36px; /* Adjust the font size as needed */
-    font-weight: bold;
-    color: #333; /* Adjust the color as needed */
+  font-size: 36px;
+  font-weight: bold;
+  color: #333;
+}
+
+.title {
+    text-align: center;
+}
+
+.iconAdd {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.giveBorder {
+    display: inline-block;
+    border: 5px dashed #A2C4C9;
+    padding: 5px;
+    font-size: 20px;
 }

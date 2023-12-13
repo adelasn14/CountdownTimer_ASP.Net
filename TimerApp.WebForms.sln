@@ -5,6 +5,8 @@ VisualStudioVersion = 25.0.1706.7
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimerApp.WebForms", "TimerApp.WebForms\TimerApp.WebForms.csproj", "{FE997590-EDB3-49BF-96B8-E6C06B2909AB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskManagementSystem_ASP.Net_MVC", "..\TaskManagementSystem_ASP.Net_MVC\TaskManagementSystem_ASP.Net_MVC\TaskManagementSystem_ASP.Net_MVC.csproj", "{55AFBDCE-04EF-4823-84C5-9509E8BB811C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{FE997590-EDB3-49BF-96B8-E6C06B2909AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FE997590-EDB3-49BF-96B8-E6C06B2909AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FE997590-EDB3-49BF-96B8-E6C06B2909AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55AFBDCE-04EF-4823-84C5-9509E8BB811C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55AFBDCE-04EF-4823-84C5-9509E8BB811C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55AFBDCE-04EF-4823-84C5-9509E8BB811C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55AFBDCE-04EF-4823-84C5-9509E8BB811C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
